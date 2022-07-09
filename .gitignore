@@ -1,0 +1,4 @@
+*.txt
+*.epub
+go.sum
+.idea
