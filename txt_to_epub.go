@@ -24,7 +24,7 @@ func TxtToEpub(filePath, author, titleReg string) {
 	defer func() {
 		err = source.Close()
 		if err != nil {
-			log.Fatal()
+			log.Fatal("出现错误", err)
 		}
 	}()
 	//文件名，去除后缀
@@ -43,7 +43,7 @@ func TxtToEpub(filePath, author, titleReg string) {
 		buf.Reset(source)
 		_, err = source.Seek(0, io.SeekStart)
 		if err != nil {
-			log.Fatal("出现错误")
+			log.Fatal("出现错误", err)
 		}
 	} else {
 		log.Fatal("没有匹配到任何章节")
